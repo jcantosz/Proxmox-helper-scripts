@@ -92,12 +92,12 @@ cp /opt/ghostfolio-$RELEASE/package.json /opt/package.json
 cp /opt/ghostfolio-$RELEASE/package-lock.json /opt/package-lock.json
 
 cd /opt/ghostfolio-$RELEASE
-$STD npm install
+$STD npm ci
 $STD npm run build:production
 mv /opt/package-lock.json /opt/ghostfolio-$RELEASE/package-lock.json
 
 cd /opt/ghostfolio-$RELEASE/dist/apps/api/
-$STD npm install
+$STD npm ci
 cp -r /opt/ghostfolio-$RELEASE/prisma .
 mv /opt/package.json /opt/ghostfolio-$RELEASE/dist/apps/api/package.json
 $STD npm run database:generate-typings
